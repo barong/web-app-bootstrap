@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "ES5",
+    "module": "commonjs"
+  },
+  "files": [
+    "src/main/typescript/defs/backbone/backbone.d.ts",
+    "src/main/typescript/defs/jquery/jquery.d.ts",
+    "src/main/typescript/defs/jquery.fileupload/jquery.fileupload.d.ts",
+    "src/main/typescript/defs/log4javascript/log4javascript.d.ts",
+    "src/main/typescript/defs/react/react.d.ts",
+    "src/main/typescript/defs/underscore/underscore.d.ts"
+  ]
+}

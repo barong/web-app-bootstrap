@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--<preConditions>-->
+        <!--<runningAs username="liquibase"/>-->
+    <!--</preConditions>-->
+
+    <changeSet id="users and authorities tables" author="barong">
+        <createTable tableName="users">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="TINYINT(1)"/>
+        </createTable>
+        
+        <createTable tableName="authorities">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="authority" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

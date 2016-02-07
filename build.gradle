@@ -1,0 +1,145 @@
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'node'
+apply plugin: 'application'
+apply plugin: 'war'
+
+// applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8", "-verbose:class"]
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+group = 'com.barong'
+version = currentVersion
+
+ext {
+    slf4j = '1.7.10'
+    logback = '1.1.2'
+    junit = '4.11'
+    groovy = '2.4.1'
+    spring = '4.1.1.RELEASE'
+    hibernate = '4.2.4.Final'
+    springBoot = '1.2.2.RELEASE'
+    jackson = '2.5.1'
+    guava = '18.0'
+    ehcache = '2.10.0'
+    apacheCommons = '3.4'
+}
+
+repositories {
+    mavenCentral()
+    jcenter {
+        url "http://jcenter.bintray.com/"
+    }
+  }
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE"
+        classpath "org.springframework:springloaded:1.2.4.RELEASE"
+        // https://github.com/hawkish/gradle-grunt
+        classpath 'dk.aeai:gradle-grunt:0.4.6'
+    }
+}
+
+compileGroovy {
+    groovyOptions.configurationScript = file("$rootProject.projectDir/groovyOptionsConfig.groovy")
+}
+
+bootRun {
+    // support passing -Dsystem.property=value to bootRun task
+    systemProperties = System.properties
+}
+
+war {
+    baseName = 'app'
+    archiveName 'app.war'
+//    from ("${projectDir}/build/static/js") {
+//        include('*.js')
+//    }
+}
+
+//npm_install {
+//    args = ["grunt-contrib-less", "typescript", "grunt-contrib-watch""]
+//}
+//installGrunt.dependsOn npmInstall
+//grunt_production.dependsOn installGrunt
+processResources.dependsOn grunt_production
+
+
+dependencies {
+
+    // Loggers
+    compile "ch.qos.logback:logback-classic:${logback}"
+    compile "org.slf4j:slf4j-api:${slf4j}"
+    runtime "org.slf4j:jcl-over-slf4j:${slf4j}"
+
+    // Spring
+    compile "org.springframework.boot:spring-boot-starter-web:${springBoot}"
+
+    // exclude internal tomcat to run app in externak tomcat for production
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    compile (
+            "org.springframework:spring-context:${spring}",
+            "org.springframework:spring-core:${spring}",
+            "org.springframework:spring-orm:${spring}",
+            "org.springframework:spring-tx:${spring}"
+    )
+
+    // Groovy (groovy-all requested by groovy templates)
+    compile "org.codehaus.groovy:groovy-all:${groovy}"
+
+    // Security
+    compile(
+            "org.springframework.boot:spring-boot-starter-security:${springBoot}"
+    )
+
+    // templates (https://spring.io/blog/2014/05/28/using-the-innovative-groovy-template-engine-in-spring-boot)
+    compile "org.codehaus.groovy:groovy-templates:${groovy}"
+
+    // database
+//    compile "org.springframework.boot:spring-boot-starter-jdbc:${springBoot}"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:${springBoot}"
+    compile 'mysql:mysql-connector-java:5.1.34'
+    compile "org.liquibase:liquibase-core:3.3.2"
+
+
+    // database
+    compile 'org.springframework.data:spring-data-jpa:1.7.2.RELEASE' // was in working project
+    compile("org.grails:gorm-hibernate4-spring-boot:1.1.0.RELEASE") // was in working project
+
+    // json jackson mapper
+    compile(
+            "com.fasterxml.jackson.core:jackson-core:${jackson}",
+            "com.fasterxml.jackson.core:jackson-databind:${jackson}",
+            "com.fasterxml.jackson.core:jackson-annotations:${jackson}"
+    )
+
+    compile "com.google.guava:guava:${guava}"
+    compile "org.apache.commons:commons-lang3:${apacheCommons}"
+
+    // Test
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBoot}"
+    testCompile("junit:junit:$junit")
+
+}
+
+configurations {
+//        all*.exclude group: "commons-logging", module: "commons-logging"
+
+// for debug purpose - checking dependencies conflicts (gradle by default using last version strategy)
+//    resolutionStrategy {
+//        // fail eagerly on version conflict (includes transitive dependencies)
+//        // e.g. multiple different versions of the same dependency (group and name are equal)
+//        failOnVersionConflict()
+//    }
+}

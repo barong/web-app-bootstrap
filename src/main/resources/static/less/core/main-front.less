@@ -1,0 +1,160 @@
+html,
+.pure-g,
+.pure-u,
+.pure-g [class*="pure-u"] {
+    font-family: @font-family-base;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: @font-family-base;
+    color: @dark;
+    background-color: @white;
+}
+
+body.back {
+    background: @gray url("/img/bg.png") repeat 0 0;
+    color: @alto-gray;
+}
+
+#header {
+    height: @header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: @header-z-index;
+
+    & a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    & .site-name {
+        
+    }
+
+    & #global_message_wrapper {
+        .global_message_wrapper();
+    }
+}
+
+
+#layout {
+    height: 100%;
+}
+
+#content_wrapper {
+    position: absolute;
+    top: @header-height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+
+    & #content {
+        position: relative;
+        padding: 10px 30px 100px 30px;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.clear {
+    clear: both;
+}
+
+
+//########################################################
+//                   PAGINATION
+//########################################################
+
+.react-pagination {
+
+    height: 50px;
+    width: 100%;
+    position: relative;
+
+    .user-select(none);
+
+    .pagination-inner {
+        position: relative;
+        //width: 500px;
+
+    }
+
+    & .react-pagination-info {
+        width: 100%;
+        margin: 15px 0;
+        text-align: left;
+    }
+
+    & .react-pagination-menu {
+        width: 250px;
+        margin: 0 auto;
+
+        div {
+            span {
+                display: block;
+                padding: 5px 10px;
+                text-align: center;
+                border: 1px solid @dusty-gray;
+            }
+        }
+
+        .first-page,
+        .current-page,
+        .last-page {
+            display: inline-block;
+            width: 100px;
+            .user-select(none);
+        }
+        .first-page {
+            &:hover {
+                .hover();
+            }
+        }
+        .current-page {
+            width: 50px;
+        }
+
+        .last-page {
+            &:hover {
+                .hover();
+            }
+        }
+    }
+}
+
+.page-size-block {
+    padding: 5px 0;
+    .user-select(none);
+
+    span {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid @dusty-gray;
+        cursor: pointer;
+
+        &:hover {
+            .hover();
+        }
+
+        &.active {
+            .hover();
+        }
+    }
+}

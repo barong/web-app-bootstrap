@@ -1,0 +1,17 @@
+{
+  "name": "web-app-bootstrap",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-webpack": "^1.0.11",
+    "load-grunt-config": "^0.17.0",
+    "time-grunt": "^1.1.0",
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.8.0",
+    "webpack": "^1.12.3",
+    "webpack-dev-server": "^1.12.1",
+    "webpack-fail-plugin": "^1.0.4"
+  }
+}
