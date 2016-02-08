@@ -5,7 +5,7 @@ module.exports =  function (grunt) {
             options: {
                 paths: ["<%= config.resources %>/less"], // Directory of input file. Specifies directories to scan for @import directives when parsing.
                 sourceMap: true,
-                sourceMapBasepath: "less",
+                outputSourceFiles: true,
                 sourceMapFileInline: true
             },
             files: {

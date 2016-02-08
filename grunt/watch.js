@@ -7,7 +7,7 @@ module.exports =  function (grunt) {
         },
         typescript: {
             files: ['<%= config.typescript_root %>/**/*.ts', '<%= config.typescript_root %>/**/*.tsx', '<%= config.resources %>/**/*.js'],
-            tasks: ['webpack:default']
+            tasks: ['webpack:development']
         }
     };
 };

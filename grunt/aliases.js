@@ -12,6 +12,6 @@ module.exports = function (grunt) {
     grunt.registerTask('production', [
         'less:production', // compile app.less to build/resource/static/css/app.css
         'concat:js',
-        'webpack:default'
+        'webpack:production'
     ]);
 };

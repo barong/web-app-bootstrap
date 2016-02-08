@@ -33,7 +33,14 @@ Web App Bootstrap is web project boilerplate
 
     gradle bootRun -DappLogs=/full/path/to/logs -DappConfig=/full/path/to/config
 
+Gradle run project with grunt:production task, which compiles .less and .ts(x) files for production site.
+
+Task grunt:watch will listen changes in .less and .ts(x) files and it will recompile files with source maps.  
+
 Default port is 8090, can be changed in application.properties with server.port property
+
+
+
 
 - PROD MODE in external Tomcat with VM options: 
 
