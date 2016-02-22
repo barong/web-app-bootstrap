@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import UserInfo from 'models/UserInfo';
 import URL from 'const/URL';
 import HTML from 'const/HTML';
@@ -31,7 +32,7 @@ export class AppBack {
     }
 
     private static renderGlobalMessages() : void {
-        React.render(
+        ReactDOM.render(
             <GlobalMessage />,
             document.getElementById(HTML.GLOBAL_MESSAGE_ID)
         );

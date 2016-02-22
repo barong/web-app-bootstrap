@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import UserInfo from '../models/UserInfo';
 import PERM from '../const/PERM';
 import HTML from '../const/HTML';
@@ -25,8 +26,8 @@ export default class RouterBack extends Backbone.Router {
     public home() {
         var contentContainer : JQuery = $(HTML.CONTENT_ID);
         if (contentContainer.length) {
-            React.unmountComponentAtNode(contentContainer.get(0));
-            React.render(
+            ReactDOM.unmountComponentAtNode(contentContainer.get(0));
+            ReactDOM.render(
                 <div />,
                 document.getElementById(HTML.CONTENT_ID)
             );

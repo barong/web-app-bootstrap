@@ -1,7 +1,8 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import HTML from "../const/HTML";
 
-export default class ReactComponent<P,S> extends React.Component<P,S> {
+export default class ReactComponent<P,S> extends React.Component<P,S>{
 
     public getState():S {
         return null;
@@ -28,7 +29,7 @@ export default class ReactComponent<P,S> extends React.Component<P,S> {
     static isMounted(component) {
         // exceptions for flow control :(
         try {
-            React.findDOMNode(component);
+            ReactDOM.findDOMNode(component);
             return true;
         } catch (e) {
             // Error: Invariant Violation: Component (with keys: props,context,state,refs,_reactInternalInstance) contains `render` method but is not mounted in the DOM

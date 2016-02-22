@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from "react-dom";
 import GlobalMessageStore from "../../stores/GlobalMessageStore";
 import ReactComponent from "../ReactComponent";
 import EVENTS from "../../const/EVENTS";
@@ -15,9 +16,12 @@ function getCurrentState() {
 export default class GlobalMessage extends ReactComponent<any,any> {
 
     public getState() {
-        return getCurrentState();
+        return getCurrentState(); 
+        //return {
+        //    globalMessages:new GlobalMessageModel("warn", "message..")
+        //}
     }
-
+  
     public componentDidMount = () => {
         GlobalMessageStore.on(EVENTS.GLOBAL_MESSAGE_STORE_CHANGE, this.onChange);
     };

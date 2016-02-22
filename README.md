@@ -26,6 +26,9 @@ Web App Bootstrap is web project boilerplate
 - NPM
 - Grunt
 
+## Installing NPM modules:
+
+    npm install
 
 ## Running application:
 - DEV MODE: 
@@ -54,9 +57,11 @@ Default port is 8090, can be changed in application.properties with server.port 
 
 ## Hot Reload
 
-1. Groovy/Java code reload with springloaded gradle plugin
+1. Groovy/Java code reload works with springloaded gradle plugin
 
-2. Front-end code recompile and reload with Grunt watch plugin (watch plugin is default plugin defined in grunt/aliases.js, so for hot code reloading just type in console: grunt)
+2. Front-end code reload:
+       - less can be recompiled with Grunt watch plugin (watch plugin is default plugin defined in grunt/aliases.js, so for less code recompiling and reloading just type in console: grunt)
+       - typescript/reactJS code can be recompiled and reloaded with webpack-dev-server. just type in console `npm run dev-server` and visit http://localhost:3000 for hot code reloading
 
 
 ## Backend

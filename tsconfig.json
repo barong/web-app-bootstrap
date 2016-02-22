@@ -11,6 +11,11 @@
     "src/main/typescript/defs/jquery.fileupload/jquery.fileupload.d.ts",
     "src/main/typescript/defs/log4javascript/log4javascript.d.ts",
     "src/main/typescript/defs/react/react.d.ts",
-    "src/main/typescript/defs/underscore/underscore.d.ts"
+    "src/main/typescript/defs/react/react-dom.d.ts",
+    "src/main/typescript/defs/redux/redux.d.ts",
+    "src/main/typescript/defs/redux/react-redux.d.ts",
+    "src/main/typescript/defs/redux/redux-actions.d.ts",
+    "src/main/typescript/defs/underscore/underscore.d.ts",
+    "src/main/typescript/defs/classnames/classnames.d.ts"
   ]
 }
