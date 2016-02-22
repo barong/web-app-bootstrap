@@ -1,3 +1,4 @@
+import 'less/app/front';
 import {Common} from 'common';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';

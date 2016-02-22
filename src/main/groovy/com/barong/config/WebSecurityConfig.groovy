@@ -41,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     void configure(WebSecurity web) throws Exception
     {
         web.ignoring().antMatchers(
+                "/assets/**",
                 "/css/**",
                 "/js/**",
                 "/img/**",

@@ -14,5 +14,6 @@ module.exports = {
     // location where TypeScript/Jasmine test files are located
     "source_test_ts": "./src/test/typescript",
     // location to place compiled javascript files
-    "target_js": "./build/resources/main/static/js"
+    "target_js": "./build/resources/main/static/js",
+    "assets": "./build/resources/main/static/assets"
 };

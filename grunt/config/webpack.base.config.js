@@ -1,26 +1,30 @@
 var webpack = require("webpack");
 var files = require('./files.path.config');
 var webpackFailPlugin = require('webpack-fail-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+var DEV_MODE = process.env.NODE_ENV === 'dev';
 
 module.exports = {
     entry: {
-        "main-front": process.env.NODE_ENV === 'dev' ?
+        "main-front": DEV_MODE ?
             ['webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server', files.source_ts + '/app-front/main-front.tsx']
             : files.source_ts + '/app-front/main-front.tsx',
-        "main-back": process.env.NODE_ENV === 'dev' ?
+        "main-back": DEV_MODE ?
             ['webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server', files.source_ts + '/app-back/main-back.ts']
             : files.source_ts + '/app-back/main-back.ts'
     },
     output: {
-        path: files.target_js,
+        path: files.assets,
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['', '.ts', '.tsx', '.js'],
+        extensions: ['', '.ts', '.tsx', '.js', '.less'],
         modulesDirectories: [
             './node_modules',
             files.js_resources,
-            files.source_ts
+            files.source_ts,
+            files.resources
         ],
         alias: {
             'jquery': 'jquery/jquery-2.1.3.min',
@@ -49,7 +53,8 @@ module.exports = {
             React: "react"
         }),
         // Webpack plugin that will make the process return status code 1 when it finishes with errors in single-run mode.
-        webpackFailPlugin
+        webpackFailPlugin,
+        new ExtractTextPlugin("[name].css")
     ],
     module: {
         loaders: [
@@ -58,6 +63,11 @@ module.exports = {
                 loaders: [
                     'ts-loader'
                 ]
+            },
+            {
+                test: /\.less$/,
+                loader: DEV_MODE ? 'style-loader!css-loader?sourceMap!less-loader?sourceMap'
+                    : ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
             }
         ]
     }

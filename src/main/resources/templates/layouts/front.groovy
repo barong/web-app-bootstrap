@@ -10,10 +10,10 @@ html {
         meta('http-equiv': 'X-UA-Compatible', content: 'IE=edge')
         meta(name: '_csrf_header', content: "${_csrf_header_content}")
         meta(name: '_csrf_token', content:"${_csrf_token_content}")
-        script(type: 'text/javascript', src:'/js/libs-front.js') {}
-        script(type: 'text/javascript', src:'/js/main-front.js') {}
+        link(rel: 'stylesheet', href: '/assets/main-front.css')
+        script(type: 'text/javascript', src:'/assets/libs-front.js') {}
+        script(type: 'text/javascript', src:'/assets/main-front.js') {}
         link (href:"favicon.ico", rel:"icon", type:"image/x-icon")
-        link(rel: 'stylesheet', href: '/css/app-front.css')
         link(href:'https://fonts.googleapis.com/css?family=Oranienbaum&subset=latin,cyrillic', rel:'stylesheet', type:'text/css')
     }
     body {

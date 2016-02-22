@@ -38,8 +38,6 @@ Web App Bootstrap is web project boilerplate
 
 Gradle run project with grunt:production task, which compiles .less and .ts(x) files for production site.
 
-Task grunt:watch will listen changes in .less and will recompile files with source maps.  
-
 Default port is 8090, can be changed in application.properties with server.port property
 
 
@@ -59,9 +57,7 @@ Default port is 8090, can be changed in application.properties with server.port 
 
 1. Groovy/Java code reload works with springloaded gradle plugin
 
-2. Front-end code reload:
-       - less can be recompiled with Grunt watch plugin (watch plugin is default plugin defined in grunt/aliases.js, so for less code recompiling and reloading just type in console: grunt)
-       - typescript/reactJS code can be recompiled and reloaded with webpack-dev-server. just type in console `npm run dev-server` and visit http://localhost:3000 for hot code reloading
+2. Front-end code reload: typescript/reactJS and .less code can be recompiled and reloaded with webpack-dev-server. just type in console `npm run dev-server` and visit http://localhost:3000 for hot code reloading
 
 
 ## Backend

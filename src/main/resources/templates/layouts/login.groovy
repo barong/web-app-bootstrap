@@ -11,7 +11,7 @@ html {
         meta(name: '_csrf_header', content: "${_csrf_header_content}")
         meta(name: '_csrf_token', content:"${_csrf_token_content}")
         link (href:"favicon.ico", rel:"icon", type:"image/x-icon")
-        link(rel: 'stylesheet', href: '/css/app-back.css')
+        link(rel: 'stylesheet', href: '/assets/main-back.css')
         link(href:'https://fonts.googleapis.com/css?family=Oranienbaum&subset=latin,cyrillic', rel:'stylesheet', type:'text/css')
     }
     body {

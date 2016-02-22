@@ -6,7 +6,7 @@ module.exports =  function (grunt) {
                 separator: ';'
             },
             files: {
-                "<%= config.target_js %>/libs-front.js": [
+                "<%= config.assets %>/libs-front.js": [
                     "<%= config.js_resources %>/jquery/jquery-2.1.3.min.js",
                     "<%= config.js_resources %>/json/json2.min.js",
                     "<%= config.js_resources %>/underscore/underscore.js",
@@ -17,7 +17,7 @@ module.exports =  function (grunt) {
                     "<%= config.js_resources %>/fileupload/jquery.fileupload.js",
                     "<%= config.js_resources %>/log4javascript/log4javascript.js"
                 ],
-                "<%= config.target_js %>/libs-back.js": [
+                "<%= config.assets %>/libs-back.js": [
                     "<%= config.js_resources %>/jquery/jquery-2.1.3.min.js",
                     "<%= config.js_resources %>/json/json2.min.js",
                     "<%= config.js_resources %>/underscore/underscore.js",

@@ -7,7 +7,7 @@ var config = require('./webpack.base.config');
 var devConfig = {
     devtool: 'eval-source-map',
     output: {
-        publicPath: '/js/'
+        publicPath: '/assets/'
     },
     devServer: {
         host: 'localhost',
