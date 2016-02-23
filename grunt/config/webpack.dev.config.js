@@ -14,7 +14,16 @@ var devConfig = {
         port: 3000,
         historyApiFallback: true,
         proxy: {
-            '*': 'http://localhost:8090'
+            '*': {
+                target: 'http://localhost:8090',
+                bypass: function (req, res, proxyOptions) {
+                    // remove "/assets/.css" files for webpack-dev-server page to exclude wrong css overriding
+                    if (req.url && req.url.match(/\/assets\/.+?\.css/)) {
+                        console.warn("WARN: file=" + req.url + " will not be proxied for dev purpose.");
+                        return '/404.html';
+                    }
+                }
+            }
         }
     },
     module: {
