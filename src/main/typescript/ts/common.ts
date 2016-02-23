@@ -21,6 +21,18 @@ export class Common {
                     }
                 }
             });
+            
+            // remove "/assets/.css" files for webpack-dev-server page to exclude wrong css overriding
+            // TODO find another way to do this
+            if (window.location.port === '3000') {
+                $('link').each(function () {
+                    var elem = $(this);
+                    if (elem.attr('href').match(/\/assets\/.+?\.css/)) {
+                        console.warn("WARN: style with href=" + elem.attr('href') + " removed for webpack-dev-server build");
+                        elem.remove();
+                    }
+                });
+            }
         });
     }
 }
