@@ -1,5 +1,6 @@
 /.gradle
 /.idea
+node/
 node_modules/
 /.settings
 /.classpath
@@ -11,3 +12,5 @@ logs/
 .DS_Store
 *.ipr
 *.iws
+appLogs/
+target/

@@ -3,16 +3,16 @@
 Web App Bootstrap is web project boilerplate
 
 ## Front-End:
-- Grunt
-- Webpack
+- Less
 - Typescript
 - ReactJS
+- Redux
 - Backbone
-- Less
+- Grunt
+- Webpack
 
 
 ## Back-End:
-- Gradle
 - Groovy/Java
 - Spring Boot
 - Spring MVC
@@ -21,22 +21,16 @@ Web App Bootstrap is web project boilerplate
 
 ## System requirements:
 - JDK 1.8
-- Gradle
-- Node.js
-- NPM
-- Grunt
+- Maven v.3.1.1+
 
-## Installing NPM modules:
-
-    npm install
 
 ## Running application:
 - DEV MODE: 
 
 
-    gradle bootRun -DappLogs=/full/path/to/logs -DappConfig=/full/path/to/config
+    mvn spring-boot:run -Drun.jvmArguments="-DappLogs=/full/path/to/appLogs -DappConfig=/full/path/to/config"
 
-Gradle run project with grunt:production task, which compiles .less and .ts(x) files for production site.
+Maven will run project with grunt:production task by default and it will compile .less and .ts(x) files for production site.
 
 Default port is 8090, can be changed in application.properties with server.port property
 
@@ -46,7 +40,7 @@ Default port is 8090, can be changed in application.properties with server.port 
 - PROD MODE in external Tomcat with VM options: 
 
 
-    -Dspring.config.location=appConfig=/full/path/to/application-production.properties/config/
+    -Dspring.config.location=/full/path/to/dir/with/application-production.properties/config/
     -Dspring.profiles.active=production 
     -DappLogs=/full/path/to/logs
     -DappConfig=/full/path/to/config
@@ -55,7 +49,8 @@ Default port is 8090, can be changed in application.properties with server.port 
 
 ## Hot Reload
 
-1. Groovy/Java code reload works with springloaded gradle plugin
+1. Groovy/Java code reload works with springloaded maven plugin. Don't forget to choose Groovy-Eclipse compiler to recompile single class and define /target/classes dir as compile result directory
+
 
 2. Front-end code reload: typescript/reactJS and .less code can be recompiled and reloaded with webpack-dev-server. just type in console `npm run dev-server` and visit http://localhost:3000 for hot code reloading
 
@@ -68,6 +63,8 @@ To register new demo user with with username/password: demo/demo please visit ur
 ## Database
 
 All database setting can be changed in application.properties file with spring.datasource.* properties
+
+By default you should have local mysql database with db_name: webappbootstrap, user: sqluser, password: sqlpass
 
 
 
