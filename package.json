@@ -28,6 +28,6 @@
     "webpack-fail-plugin": "^1.0.4"
   },
   "scripts": {
-    "dev-server": "NODE_ENV=dev webpack-dev-server --config grunt/config/webpack.dev.config.js --progress --colors --hot"
+    "dev-server": "webpack-dev-server --config grunt/config/webpack.dev.config.js --progress --colors --hot --inline"
   }
 }
