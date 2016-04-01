@@ -39,6 +39,7 @@
         <liquibase-version>3.4.2</liquibase-version>
         <frontend-maven-plugin-version>0.0.29</frontend-maven-plugin-version>
         <ehcache-version>2.10.0</ehcache-version>
+        <commons-configuration-version>1.10</commons-configuration-version>
     </properties>
 
     <build>
@@ -276,6 +277,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>${commons-configuration-version}</version>
         </dependency>
         
         <!-- Test -->
