@@ -6,7 +6,7 @@ export default class GlobalMessageModel {
     private _message:string;
 
     constructor(level:string, message:string) {
-        this._id = GlobalMessageModel._lastId++;
+        this._id = GlobalMessageModel._lastId++ || 0;
         this._level = level;
         this._message = message;
     }

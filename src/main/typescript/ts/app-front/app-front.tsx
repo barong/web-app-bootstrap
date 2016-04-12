@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import Header from './components/Header';
 import MainSection from './components/MainSection';
 import * as TodoActions from './actions/todos';
+import ReactComponent from "../common/components/ReactComponent";
 
 
-class AppFront extends React.Component<any, any> {
+class AppFront extends ReactComponent<any, any> {
 
     public render() {
         const { todos, dispatch } = this.props;

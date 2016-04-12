@@ -9,7 +9,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         "main-front": files.source_ts + '/app-front/main-front.tsx',
-        "main-back": files.source_ts + '/app-back/main-back.ts'
+        "main-back": files.source_ts + '/app-back/main-back.tsx'
     },
     devtool: 'eval-source-map',
     output: {
@@ -83,7 +83,8 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                loader: 'style-loader!css-loader?sourceMap!less-loader?sourceMap'
+                loader: 'style-loader!css-loader!less-loader'
+                // loader: 'style-loader!css-loader?sourceMap!less-loader?sourceMap' // url() doesn't work with source map
             }
         ]
     }

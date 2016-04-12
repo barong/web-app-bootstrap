@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import UserInfo from '../models/UserInfo';
-import PERM from '../const/PERM';
-import HTML from '../const/HTML';
+import UserInfo from '../common/models/UserInfo';
+import PERM from '../common/constants/PERM';
+import HTML from '../common/constants/HTML';
 
 
 

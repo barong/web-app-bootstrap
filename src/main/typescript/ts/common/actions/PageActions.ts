@@ -1,4 +1,4 @@
-import HTML from '../const/HTML';
+import HTML from '../constants/HTML';
 
 export default class PageActions {
     static scrollTop = () => {

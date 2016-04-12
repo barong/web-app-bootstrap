@@ -1,38 +1,29 @@
-import 'less/app/front';
+import 'less/app/back';
 import {Common} from '../common/common';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import UserInfo from '../common/models/UserInfo';
 import URL from '../common/constants/URL';
 import HTML from '../common/constants/HTML';
-import RouterFront from './router-front';
-import GlobalMessage from '../common/components/globalmessage/GlobalMessage';
-import * as GlobalMessageActions from '../common/actions/GlobalMessageActions';
+import RouterFront from './router-back';
 import {
     Store,
-    compose,
     createStore,
-    bindActionCreators,
-    combineReducers
 } from 'redux';
-import * as Redux from 'redux';
 import {
-    connect,
     Provider
 } from 'react-redux';
-import { Action } from 'redux-actions';
-
-import AppFront from './app-front';
-import { rootReducer } from './reducers/rootReducer';
-
+import GlobalMessages from '../common/components/globalmessage/GlobalMessage';
+import AppBack from './containers/app-back';
+import {rootReducer} from "./reducers/rootReducer";
 const initialState = {};
 
 const store: Store = createStore(rootReducer, initialState);
 
 class MainFront {
-    
+
     static Router : Backbone.Router;
-    
+
     constructor() {
         $(document).ready(function () {
             Common.init();
@@ -46,7 +37,14 @@ class MainFront {
 
                     ReactDOM.render(
                         <Provider store={store}>
-                            <AppFront />
+                            <GlobalMessages />
+                        </Provider>,
+                        document.getElementById(HTML.GLOBAL_MESSAGE_ID)
+                    );
+
+                    ReactDOM.render(
+                        <Provider store={store}>
+                            <AppBack />
                         </Provider>,
                         document.getElementById(HTML.CONTENT_ID)
                     );

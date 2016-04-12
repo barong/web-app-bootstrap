@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import HTML from "../const/HTML";
+import HTML from "../constants/HTML";
 
 export default class ReactComponent<P,S> extends React.Component<P,S>{
 

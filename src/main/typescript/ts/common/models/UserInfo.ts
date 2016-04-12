@@ -1,4 +1,4 @@
-import URL from '../const/URL';
+import URL from '../constants/URL';
 
 export default class UserInfo {
 
