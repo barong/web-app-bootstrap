@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "target": "ES5",
+    "target": "ES6",
     "module": "commonjs",
-    "sourceMap": true
+    "sourceMap": true,
+    "emitDecoratorMetadata": true // https://www.npmjs.com/package/di-ts
   },
   "files": [
     "src/main/typescript/defs/backbone/backbone.d.ts",

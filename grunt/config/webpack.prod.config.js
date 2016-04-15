@@ -8,8 +8,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        "main-front": files.source_ts + '/app-front/main-front.tsx',
-        "main-back": files.source_ts + '/app-back/main-back.tsx'
+        "main-front": ['babel-polyfill', files.source_ts + '/app-front/main-front.tsx'],
+        "main-back": ['babel-polyfill', files.source_ts + '/app-back/main-back.tsx']
     },
     output: {
         path: files.assets,
@@ -58,6 +58,7 @@ module.exports = {
             {
                 test: /\.ts(x?)$/,
                 loaders: [
+                    'babel-loader?presets[]=es2015',
                     'ts-loader'
                 ]
             },
