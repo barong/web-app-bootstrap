@@ -4,7 +4,8 @@
     "target": "ES6",
     "module": "commonjs",
     "sourceMap": true,
-    "emitDecoratorMetadata": true // https://www.npmjs.com/package/di-ts
+    "emitDecoratorMetadata": true, // https://www.npmjs.com/package/di-ts
+    "experimentalDecorators": true
   },
   "files": [
     "src/main/typescript/defs/backbone/backbone.d.ts",
