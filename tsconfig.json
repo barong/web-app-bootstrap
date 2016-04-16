@@ -16,6 +16,7 @@
     "src/main/typescript/defs/redux/redux.d.ts",
     "src/main/typescript/defs/redux/react-redux.d.ts",
     "src/main/typescript/defs/redux/redux-actions.d.ts",
+    "src/main/typescript/defs/redux-thunk/redux-thunk.d.ts",
     "src/main/typescript/defs/underscore/underscore.d.ts",
     "src/main/typescript/defs/classnames/classnames.d.ts",
     "src/main/typescript/defs/immutable/immutable.d.ts"

@@ -9,6 +9,7 @@ import RouterFront from './router-back';
 import {
     Store,
     createStore,
+    applyMiddleware
 } from 'redux';
 import {
     Provider
@@ -16,9 +17,10 @@ import {
 import GlobalMessages from '../common/components/globalmessage/GlobalMessage';
 import AppBack from './containers/app-back';
 import {rootReducer} from "./reducers/rootReducer";
+import thunk from 'redux-thunk';
 const initialState = {};
 
-const store: Store = createStore(rootReducer, initialState);
+const store: Store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 class MainFront {
 

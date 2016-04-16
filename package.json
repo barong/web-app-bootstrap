@@ -24,6 +24,7 @@
     "redux": "^3.3.1",
     "redux-actions": "^0.9.1",
     "redux-devtools": "^3.1.1",
+    "redux-thunk": "^2.0.1",
     "style-loader": "^0.13.0",
     "time-grunt": "^1.1.0",
     "ts-loader": "^0.7.2",

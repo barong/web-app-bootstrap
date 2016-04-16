@@ -13,7 +13,8 @@ import {
     compose,
     createStore,
     bindActionCreators,
-    combineReducers
+    combineReducers,
+    applyMiddleware
 } from 'redux';
 import * as Redux from 'redux';
 import {
@@ -24,10 +25,11 @@ import { Action } from 'redux-actions';
 
 import AppFront from './app-front';
 import { rootReducer } from './reducers/rootReducer';
+import thunk from 'redux-thunk';
 
 const initialState = {};
 
-const store: Store = createStore(rootReducer, initialState);
+const store: Store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 class MainFront {
     
