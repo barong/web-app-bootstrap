@@ -1,0 +1,6 @@
+node_modules/* linguist-vendored
+node/* linguist-vendored
+config/* linguist-vendored
+grunt/* linguist-vendored
+src/main/resources/static/js/* linguist-vendored
+*.tsx linguist-language=TypeScript

@@ -68,10 +68,6 @@ By default you should have local mysql database with db_name: webappbootstrap, u
 
 
 
-
-
-
-
-
+##### Frontend app bootstrap - [https://github.com/barong/frontend-app](https://github.com/barong/frontend-app)
 
 
